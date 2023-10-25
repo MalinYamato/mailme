@@ -1,4 +1,4 @@
-module github.com/supabase/mailme
+module github.com/MalinYamato/mailme
 
 go 1.20
 
