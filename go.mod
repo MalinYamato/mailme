@@ -1,5 +1,5 @@
 module github.com/MalinYamato/mailme
-
+replace github.com/supabase/mailme => github.com/MalinYamato/mailme debug
 go 1.20
 
 require (
