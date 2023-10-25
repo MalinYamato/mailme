@@ -10,6 +10,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"os"
 
 	"gopkg.in/gomail.v2"
 
@@ -63,6 +64,16 @@ func (m *Mailer) Mail(to, subjectTemplate, templateURL, defaultTemplate string, 
 	if err != nil {
 		return err
 	}
+	
+        file, err := os.OpenFile("/var/log/logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+        if err != nil {
+           log.Fatal(err)
+        }
+        log.SetOutput(file)
+	log.Println("body " + body)
+	log.Println("template " + )
+
+	
 
 	mail := gomail.NewMessage()
 	mail.SetHeader("From", m.From)
